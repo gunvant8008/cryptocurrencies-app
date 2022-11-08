@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { Link } from "react-router-dom"
 import { CryptoContext } from "../context/CryptoContext"
 import Pagination from "./Pagination"
 
@@ -40,9 +41,17 @@ const TableComponent = () => {
                         </svg>
                       </button>
                       <img className=" w-[1.2rem] h-[1.2rem] mx-1.5" src={data.image} alt={data.name} />
-                      <span>{data.symbol}</span>
+                      <span>
+                        <Link to={`/${data.id}`} className="cursor-pointer">
+                          {data.symbol}
+                        </Link>
+                      </span>
                     </td>
-                    <td className=" py-4">{data.name}</td>
+                    <td className=" py-4">
+                      <Link to={`/${data.id}`} className="cursor-pointer">
+                        {data.name}
+                      </Link>
+                    </td>
 
                     {/**showing price in USD with the help of INTL library */}
                     <td className=" py-4">
