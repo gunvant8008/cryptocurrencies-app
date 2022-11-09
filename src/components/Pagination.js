@@ -18,7 +18,7 @@ const PerPage = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className=" relative flex items-center font-nunito mr-12">
+    <form onSubmit={handleSubmit} className=" relative flex items-center font-nunito mr-0 md:mr-6">
       <label htmlFor="perpage" className="relative flex items-center justify-center mr-2 font-bold">
         Per Page:
       </label>
@@ -69,9 +69,9 @@ const Pagination = () => {
 
   if (cryptoData && cryptoData.length >= perPage) {
     return (
-      <div className="flex items-center">
+      <div className="flex md:flex-row flex-col items-center md:mt-0 mt-4">
         <PerPage />
-        <ul className=" flex items-center justify-end text-sm">
+        <ul className=" flex items-center justify-end text-sm sm:mt-0 mt-4">
           <li className="flex items-center">
             <button onClick={previous} className="outline-0 hover:text-cyan w-8">
               <img src={paginationArrow} alt="left" className="w-full h-auto rotate-180" />

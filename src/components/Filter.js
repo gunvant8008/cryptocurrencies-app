@@ -22,12 +22,12 @@ const Filter = () => {
   }
 
   return (
-    <div className=" w-full h-12 border-2 border-gray-100 rounded-md flex items-center justify-between relative">
+    <div className=" w-full lg:h-12 h-full lg:border-2 rounded-lg border-solid lg:border-gray-100 border-0 flex lg:flex-row flex-col lg:items-center lg:justify-between relative align-start justify-between">
       <Search />
 
-      <div className=" flex mr-7">
-        <form onSubmit={handleCurrencySubmit} className=" relative flex items-center font-nunito mr-12">
-          <label htmlFor="currency" className="relative flex items-center justify-center mr-2 font-bold">
+      <div className=" flex lg:mr-7 justify-between mt-4 lg:mt-0 sm:flex-row flex-col relative">
+        <form onSubmit={handleCurrencySubmit} className=" relative flex items-center font-nunito mr-1 md:mr-12">
+          <label htmlFor="currency" className="relative flex justify-center items-center ">
             currency:
           </label>
           <input ref={currencyRef} type="text" placeholder="usd" name="currency" className=" w-16 rounded bg-gray-200 placeholder:text-gray-100 pl-2 required ouline-0 border border-transparent focus:border-cyan leading-4" />
@@ -35,21 +35,37 @@ const Filter = () => {
             <img src={submitIcon} alt="submit" className=" w-full h-auto" />
           </button>
         </form>
-        <label className="relative flex justify-center items-center">
-          <span className=" font-bold mr-2">sort by:</span>
-          <select onChange={handleSort} name="sortby" className=" rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0 appearance-none ">
-            <option value="market_cap_desc">market cap desc</option>
-            <option value="market_cap_asc">market cap asc</option>
-            <option value="volume_desc">volume desc</option>
-            <option value="volume_asc">volume asc</option>
-            <option value="id_desc">id desc</option>
-            <option value="id_asc">id asc</option>
-            <option value="gecko_desc">gecko desc</option>
-            <option value="gecko_asc">gecko asc</option>
+        <label className="relative flex sm:justify-center justify-start items-center mt-4 sm:mt-0">
+          <span className=" mr-2 sm:font-bold font-medium sm:text-base text-sm w-16">sort by:</span>
+          <select onChange={handleSort} name="sortby" className="rounded bg-gray-200 sm:text-base text-sm pl-2 pr-10 py-1.5 focus:outline-0 text-transparent appearance-none capitalize leading-4 w-full sm:w-48 ">
+            <option className="sm:text-base text-sm" value="market_cap_desc">
+              market cap desc
+            </option>
+            <option className="sm:text-base text-sm" value="market_cap_asc">
+              market cap asc
+            </option>
+            <option className="sm:text-base text-sm" value="volume_desc">
+              volume desc
+            </option>
+            <option className="sm:text-base text-sm" value="volume_asc">
+              volume asc
+            </option>
+            <option className="sm:text-base text-sm" value="id_desc">
+              id desc
+            </option>
+            <option className="sm:text-base text-sm" value="id_asc">
+              id asc
+            </option>
+            <option className="sm:text-base text-sm" value="gecko_desc">
+              gecko desc
+            </option>
+            <option className="sm:text-base text-sm" value="gecko_asc">
+              gecko asc
+            </option>
           </select>
           <img src={selectIcon} alt="submit" className=" w-[1rem] h-auto absolute right-1 top-1 pointer-events-none" />
         </label>
-        <button onClick={resetFunction} className="w-[2rem] ml-4 hover:scale-110 transition-all ease-linear ">
+        <button onClick={resetFunction} className="w-[2rem] ml-4 hover:scale-110 transition-all transition-ease absolute right-0 top-0 sm:relative  ">
           <svg
             className="w-full h-full fill-cyan"
             xmlns="http://www.w3.org/2000/svg"

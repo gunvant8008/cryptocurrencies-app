@@ -318,7 +318,12 @@ const CryptoDetails = () => {
               )}
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div className=" w-full h-full min-h-[60vh] flex justify-center items-center">
+            <div className=" w-8 h-8 border-4 border-cyan rounded-full border-b-gray-100 animate-spin" role="status" />
+            <span className="ml-2">Please wait...</span>
+          </div>
+        )}
       </div>
     </div>,
     document.getElementById("modal")

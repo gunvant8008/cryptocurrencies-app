@@ -34,6 +34,7 @@ export const CryptoProvider = ({ children }) => {
   }
 
   const getCoinData = async coinId => {
+    setCoinData()
     try {
       const data = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`)
         .then(res => res.json())
@@ -47,6 +48,10 @@ export const CryptoProvider = ({ children }) => {
 
   useLayoutEffect(() => {
     const getCryptoData = async () => {
+      setCryptoData()
+      setTotalPages(13240)
+      /** 
+       * instead of calling api again and again for pages, we will give a hard no for pages. which will be near to the real no(there are more than 1300+ pages)
       try {
         const data = await fetch(`https://api.coingecko.com/api/v3/coins/list/`)
           .then(res => res.json())
@@ -58,6 +63,7 @@ export const CryptoProvider = ({ children }) => {
       } catch (error) {
         console.log(error)
       }
+      */
 
       try {
         const data = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${coinSearch}&order=${sortBy}&per_page=${perPage}&page=${page}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`)

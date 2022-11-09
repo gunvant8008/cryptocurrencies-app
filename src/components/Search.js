@@ -27,7 +27,7 @@ const SearchInput = ({ handleSearch }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className=" w-96 relative flex items-center ml-7 font-nunito">
+      <form onSubmit={handleSubmit} className=" xl:w-96 lg:w-60 w-full relative flex items-center lg:ml-7 font-nunito">
         <input onChange={handleInput} value={searchText} type="text" name="search" placeholder="search here..." className=" w-full rounded bg-gray-200 placeholder:text-gray-100 pl-2 required outline-0 border focus:border-cyan border-transparent" />
         <button type="submit" className="absolute right-1 cursor-pointer">
           <img src={searchIcon} alt="search" className="w-full h-auto" />
