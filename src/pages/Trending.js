@@ -8,8 +8,8 @@ const Trending = () => {
   const { trendData, resetTrendingResult } = useContext(TrendingContext)
 
   return (
-    <section className="w-[80%] h-full flex flex-col mt-16 mb-24 relative ">
-      <div className="w-full min-h-[60vh] py-8 flex flex-wrap justify-evenly border border-gray-100 rounded">
+    <section className="lg:w-[80%] w-[90%] h-full flex flex-col  mb-24 mt-16 relative ">
+      <div className="w-full flex lg:flex-row flex-col items-center flex-wrap justify-evenly py-8 border border-gray-100 rounded min-h-[60vh]">
         {trendData && trendData.map(coin => <TrendingCoin key={coin.coin_id} data={coin} />)}
 
         <button onClick={resetTrendingResult} className="w-[2rem] ml-4 hover:scale-110 transition-all ease-linear absolute right-0 -top-10 ">
@@ -30,6 +30,14 @@ const Trending = () => {
             <path fill="rgba(0, 0, 0, 0)" d="M0 0h24v24H0z" />
           </svg>
         </button>
+      </div>
+      <div className=" flex md:flex-row flex-col items-center justify-between  mt-4 capitalize h-[2rem]">
+        <span>
+          Data Provided By{" "}
+          <a className="text-cyan" href="http://www.coingecko.com" rel="noreferrer" target={"_blank"}>
+            Coingecko
+          </a>
+        </span>
       </div>
       <Outlet />
     </section>

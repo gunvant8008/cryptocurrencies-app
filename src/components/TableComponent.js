@@ -58,7 +58,7 @@ const TableComponent = () => {
               {cryptoData.map(data => {
                 return (
                   <tr key={data.id} className=" text-center text-base border-b border-gray-100 hover:bg-gray-200 last:border-b-0">
-                    <td className=" py-4 flex items-center uppercase">
+                    <td className=" py-4 md:w-24 w-8 ml-3 flex items-center uppercase">
                       <SaveBtn data={data} />
                       <img className=" w-[1.2rem] h-[1.2rem] mx-1.5" src={data.image} alt={data.name} />
                       <span>
