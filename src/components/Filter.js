@@ -35,10 +35,10 @@ const Filter = () => {
             <img src={submitIcon} alt="submit" className=" w-full h-auto" />
           </button>
         </form>
-        <label className="relative flex sm:justify-center justify-start items-center mt-4 sm:mt-0">
+        <label for="market" className="relative flex sm:justify-center justify-start items-center text-center mt-4 sm:mt-0">
           <span className=" mr-2 sm:font-bold font-medium sm:text-base text-sm w-16">sort by:</span>
-          <select onChange={handleSort} name="sortby" className="rounded bg-gray-200 sm:text-base text-sm pl-2 pr-10 py-1.5 focus:outline-0 text-transparent appearance-none capitalize leading-4 w-full sm:w-48 ">
-            <option className="sm:text-base text-sm" value="market_cap_desc">
+          <select id="market" onChange={handleSort} name="sortby" className="text-center form-select block rounded bg-gray-200 sm:text-base text-sm pl-2 pr-10 py-1.5 focus:outline-0 text-transparent appearance-none capitalize leading-4 w-full sm:w-48 bg-clip-padding bg-no-repeat border border-solid border-gray-300 ">
+            <option selected className="sm:text-base text-sm " value="market_cap_desc">
               market cap desc
             </option>
             <option className="sm:text-base text-sm" value="market_cap_asc">
